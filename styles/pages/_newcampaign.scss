@@ -1,0 +1,85 @@
+.new-campaign {
+  .placeholder {
+    @apply flex items-center justify-center w-full aspect-[1820/700] bg-dark-gray2;
+
+    span {
+      @apply sm:text-5xl text-2xl text-center sm:text-start font-semibold text-white mx-auto;
+    }
+  }
+
+  .offer-btn-container {
+    @apply flex items-center justify-center;
+
+    button {
+      @apply md:my-[5.625rem] my-[3rem] mx-auto py-5 px-6;
+    }
+  }
+
+  .additional_details {
+    @apply flex flex-col gap-[0.875rem] items-center text-dark-gray1 justify-center py-[3.75rem];
+
+    /* Lighter Grey */
+
+    background: #eeeeee;
+
+    .about {
+      @apply font-bold text-center md:w-[40rem] text-dark-gray1;
+      font-size: 2.5rem;
+      line-height: 50px;
+    }
+  }
+
+  .terms_and_conditions {
+    @apply p-10 md:p-24;
+
+    span {
+      @apply font-bold text-center text-primary;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    ul {
+      @apply list-disc px-[2rem] pt-[1.438rem];
+
+      li {
+        @apply font-normal p-2 text-dark-gray1;
+        font-size: 1.438rem;
+        line-height: 29px;
+      }
+    }
+  }
+  .inspection_point_ar {
+    ul {
+      @apply list-disc pl-[10rem] pt-[1.438rem];
+
+      li {
+        @apply font-semibold p-2 text-dark-gray1;
+        font-size: 1.438rem;
+      }
+    }
+    @media (max-width: 768px) {
+      ul {
+        @apply pl-0;
+
+        li {
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+  .inspection_point_en {
+    ul {
+      @apply list-disc pl-[1rem] pt-[1.438rem];
+
+      li {
+        @apply p-2 text-dark-gray1;
+        font-size: 1.438rem;
+      }
+      @media (max-width: 768px) {
+        li {
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}

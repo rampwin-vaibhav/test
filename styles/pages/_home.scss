@@ -1,0 +1,82 @@
+.gogo-home-page {
+  @apply w-full;
+
+  .sticky-search {
+    .sticky-search-wrapper {
+      @apply w-full;
+      padding: 64px 148px;
+    }
+  }
+
+  .blade-outer-container {
+    @apply w-full px-8 lg:px-[80px] xl:px-[120px] 2xl:px-[142px] 3xl:px-[180px];
+
+    &.need-help-container {
+      @apply p-0 lg:px-[80px] lg:pt-[5.5rem] lg:pb-[5.6612rem] xl:px-[120px] 2xl:px-[142px] 3xl:px-[180px];
+    }
+  }
+
+  .need-help-for-search-wrapper,
+  .trending-search,
+  .search-wrapper {
+    @apply bg-light-gray;
+  }
+
+  .search-text {
+    @apply text-primary;
+  }
+
+  .affordable-filter {
+    @apply flex flex-col justify-center gap-[0.9375rem] items-center rounded-md;
+  }
+
+  .trending-vehicle-img {
+    box-shadow: 0px 0px 5px 2px rgba(88, 99, 106, 0.08);
+    picture {
+      @apply w-[120px] 2xl:w-[146px] 3xl:w-[156px];
+    }
+  }
+
+  .trending-vehicle-img:hover {
+    box-shadow: 0px 0px 5px 2px rgba(88, 99, 106, 0.1);
+    picture {
+      @apply w-[125px] 2xl:w-[150px] 3xl:w-[160px];
+    }
+  }
+
+  .need-help {
+    @apply bg-primary;
+  }
+
+  .search-area {
+    .search-form {
+      input {
+        &::placeholder {
+          @apply text-dark-gray1;
+          /* Chrome, Firefox, Opera, Safari 10.1+ */
+          opacity: 1; /* Firefox */
+        }
+
+        &:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          @apply text-dark-gray1;
+        }
+
+        &::-ms-input-placeholder {
+          /* Microsoft Edge */
+          @apply text-dark-gray1;
+        }
+      }
+    }
+  }
+
+  .search-icon {
+    @apply w-[1.875rem] h-[1.875rem] ltr:ml-[16px] ltr:mr-[5px] lg:ltr:ml-[16px] lg:ltr:mr-[5px] xl:ltr:ml-[20px] xl:ltr:mr-[10px] 2xl:ltr:ml-[25px] 2xl:ltr:mr-[12px] 3xl:ltr:ml-[30px] 3xl:ltr:mr-[15px];
+    @apply rtl:mr-[16px] rtl:ml-[5px] lg:rtl:mr-[16px] lg:rtl:ml-[5px] xl:rtl:mr-[20px] xl:rtl:ml-[10px] 2xl:rtl:mr-[25px] 2xl:rtl:ml-[12px] 3xl:rtl:mr-[30px] 3xl:rtl:ml-[15px];
+  }
+
+  .buy-a-car,
+  .sell-a-car {
+    @apply w-[280px] 3xl:w-[357px] aspect-[119/103] rounded-[2px];
+  }
+}

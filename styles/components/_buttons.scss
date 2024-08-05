@@ -1,0 +1,139 @@
+button.btn {
+  @apply text-xl min-w-[17.188rem] min-h-[3.5rem] leading-[1.563rem] rounded-[0.25rem] px-2;
+  @apply text-center cursor-pointer font-bold border whitespace-nowrap disabled:cursor-not-allowed;
+  outline: none !important;
+
+  &.btn-primary {
+    @apply bg-primary border-primary text-white;
+    @apply hover:bg-hover hover:border-hover hover:text-primary;
+    @apply disabled:bg-light-gray disabled:border-light-gray disabled:text-dark-gray2;
+  }
+  &.platinum-select {
+    @apply min-w-[8.938rem] min-h-[3rem];
+    @apply border-dark-gray1 text-dark-gray1;
+    @apply disabled:border-light-gray disabled:text-dark-gray2;
+  }
+  &.diamond-select {
+    @apply min-w-[8.938rem] min-h-[3rem];
+    background: linear-gradient(to right, #ff8300, #de2a00);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    border-image: linear-gradient(to right, #ff8300, #de2a00) 1;
+    @apply disabled:opacity-50;
+  }
+
+  &.btn-secondary {
+    @apply border-primary bg-white text-primary;
+    @apply hover:bg-hover hover:border-hover hover:text-primary;
+    @apply disabled:bg-white disabled:border-dark-gray2 disabled:text-dark-gray2;
+  }
+
+  &.btn-pagination {
+    @apply w-[6.125rem] h-[3.1875rem] p-1 flex justify-center items-center font-bold;
+    @apply bg-primary border-primary text-white;
+    @apply hover:bg-hover hover:border-hover hover:text-primary;
+    @apply disabled:bg-light-gray disabled:border-light-gray disabled:text-dark-gray1;
+    min-width: 0 !important;
+
+    &.btn-pagination-icon {
+      @apply w-14;
+    }
+  }
+
+  &.btn-recommendation {
+    @apply border-white bg-primary text-white;
+    @apply hover:bg-hover hover:border-hover hover:text-primary;
+    @apply disabled:bg-white disabled:border-dark-gray2 disabled:text-dark-gray2;
+  }
+
+  &.btn-sm {
+    @apply text-base min-w-[15rem] min-h-[3rem] leading-5 rounded-[0.313rem];
+  }
+
+  &.btn-md {
+    @apply text-large min-w-[19.375rem] min-h-[3.75rem] leading-[1.688rem];
+  }
+
+  &.btn-lg {
+    @apply text-large min-w-[21.563rem] min-h-[5.313rem] leading-[1.688rem];
+  }
+
+  &.btn-modal {
+    @apply text-xl min-w-[10.25rem] min-h-[3.5rem] leading-[1.375rem];
+  }
+
+  &.btn-auto {
+    @apply px-4;
+    min-width: 0 !important;
+  }
+
+  &.btn-link {
+    @apply p-2 min-h-0 bg-transparent border-none underline text-primary hover:bg-transparent active:bg-transparent disabled:bg-transparent;
+  }
+
+  &:disabled {
+    * {
+      @apply cursor-not-allowed;
+    }
+  }
+}
+
+a.link {
+  &.primary {
+    @apply bg-primary border-primary text-white hover:bg-hover hover:border-hover;
+  }
+}
+
+.color-button {
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8) inset;
+  transform: rotate(-20deg);
+
+  .highlight {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 80%;
+    height: 64%;
+    opacity: 0.65;
+    border-radius: 100%;
+
+    /* gratuitous gradient compatibility - activate! */
+    background: -moz-linear-gradient(
+      top,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* FF3.6+ */
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0%, rgba(255, 255, 255, 1)),
+      color-stop(100%, rgba(255, 255, 255, 0))
+    ); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(
+      top,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(
+      top,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* Opera 11.10+ */
+    background: -ms-linear-gradient(
+      top,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* IE10+ */
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  }
+}

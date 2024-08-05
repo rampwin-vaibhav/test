@@ -1,0 +1,18 @@
+.gogo-notification {
+  .icon-position {
+    float: right;
+  }
+  .notification {
+    min-height: 510px;
+  }
+  .notification-anchor-text,
+  .EmailEditorTheme__link {
+    color: blue;
+    text-decoration: underline;
+  }
+  .icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+  }
+}

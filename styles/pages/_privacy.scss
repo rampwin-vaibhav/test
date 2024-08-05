@@ -1,0 +1,20 @@
+.gogo-privacy-page {
+  .para-info {
+    @apply mb-3 text-dark-gray1;
+    line-height: 2;
+    word-spacing: 1px;
+
+    ol,
+    ul {
+      margin: revert;
+      padding: revert;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+    }
+    a {
+      color: rgb(84, 110, 239);
+      border-bottom: 1px solid rgb(84, 110, 239);
+      font-weight: bold;
+    }
+  }
+}

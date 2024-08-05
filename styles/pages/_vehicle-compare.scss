@@ -1,0 +1,17 @@
+.gogo-car-compare-page {
+  .table-input {
+    @apply w-full absolute z-10 cursor-pointer opacity-0 h-4 top-6;
+  }
+  .table-name {
+    @apply flex justify-between items-center p-5 pl-8 pr-8 h-16 cursor-pointer select-none;
+  }
+  .table-row {
+    @apply font-semibold tracking-wide text-left text-lighter-gray bg-dark-gray2 uppercase border-b;
+  }
+  .table-data {
+    @apply items-center text-dark-gray1 px-4 py-3 border;
+  }
+  .table-index {
+    @apply px-4 py-3  border;
+  }
+}

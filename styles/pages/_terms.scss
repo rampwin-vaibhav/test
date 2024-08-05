@@ -1,0 +1,27 @@
+.gogo-terms-page {
+  .para-section {
+    @apply pt-3 pb-[5px];
+  }
+  .para-heading {
+    @apply text-lg font-semibold mb-2 text-dark-gray1;
+  }
+  .po-terms {
+    ol,
+    ul {
+      margin: revert;
+      padding: revert;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+    }
+    a {
+      color: rgb(84, 110, 239);
+      border-bottom: 1px solid rgb(84, 110, 239);
+      font-weight: bold;
+    }
+  }
+  .para-info {
+    @apply mb-3 text-dark-gray1;
+    line-height: 2;
+    word-spacing: 1px;
+  }
+}

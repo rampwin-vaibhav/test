@@ -1,0 +1,79 @@
+.header {
+  .top-header {
+    @apply h-[3.75rem] md:flex items-center hidden bg-primary;
+    .menu-item {
+      @apply font-bold cursor-pointer text-white;
+    }
+  }
+  .main-header {
+    @apply h-[6.75rem] flex items-center;
+    .menu-item {
+      @apply font-bold uppercase cursor-pointer text-primary;
+    }
+  }
+
+  .main-header-expandable {
+    .menu-item {
+      @apply font-bold uppercase cursor-pointer text-primary;
+    }
+  }
+
+  .header-dropdown {
+    .menu {
+      box-shadow: 0px 4px 20px rgba(88, 99, 106, 0.75);
+    }
+  }
+  .header-dropdown-item {
+    @apply flex items-center py-[7px] px-[15px] cursor-pointer text-dark-gray1 text-lg;
+
+    &:hover {
+      @apply bg-primary text-white;
+    }
+    &:hover .header-dropdown-cart-count {
+      @apply bg-white text-dark-gray1;
+    }
+    &.active {
+      @apply bg-dark-purple text-white;
+    }
+  }
+
+  .header-dropdown-cart-count {
+    @apply bg-dark-purple text-white;
+  }
+
+  .menu-items {
+    @apply min-h-[150px] overflow-auto;
+  }
+  .name {
+    color: #181818;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    overflow-wrap: normal;
+    font-size: 13px;
+  }
+
+  .notification-anchor-text {
+    text-decoration: underline;
+    color: #4b124b;
+    font-size: 13px;
+  }
+  .time {
+    display: block;
+    font-size: 11px;
+  }
+}
+
+.bell-notification {
+  .EmailEditorTheme__paragraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span {
+      white-space: nowrap !important;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.gogo-car-details-page {
+  .header {
+    @apply shadow-lg fixed z-10 left-0 right-0 py-3 h-[90px] sm:flex flex-col w-full hidden bg-lighter-gray;
+  }
+  .header-label {
+    @apply text-primary;
+  }
+
+  ul {
+    li::marker {
+      @apply text-primary;
+    }
+  }
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .compare-icon:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}

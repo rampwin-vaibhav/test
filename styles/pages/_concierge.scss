@@ -1,0 +1,28 @@
+.gogo-concierge-page {
+  .box {
+    width: auto;
+    height: auto;
+    background-color: rgba(252, 250, 250, 0.897);
+    z-index: 3;
+    opacity: 0.9;
+    @media (min-width: 1024px) {
+      top: 15%;
+    }
+    @media (max-width: 1024px) {
+      top: 13%;
+    }
+  }
+
+  .tab-data {
+    @apply pb-8 flex flex-col min-h-[28.125rem] justify-between;
+  }
+
+  .bodytype-box {
+    @apply flex items-center justify-center w-full gap-2 hover:bg-hover hover:border-hover hover:text-primary border border-gray-400 h-[5.9375rem] cursor-pointer px-12 rounded-md;
+  }
+
+  .selected-bodytype-box,
+  .selected-fueltype-box {
+    @apply bg-primary flex items-center justify-center w-full gap-2 border border-gray-400 h-[5.9375rem] text-white cursor-pointer px-12 rounded-md;
+  }
+}

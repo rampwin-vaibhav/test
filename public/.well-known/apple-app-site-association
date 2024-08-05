@@ -1,0 +1,35 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "##IOS_MOBILE_APP_ID##",
+        "paths": [
+          "/cart",
+          "/ar/cart",
+          "/car-details/*",
+          "/car-details",
+          "/ar/car-details",
+          "/ar/car-details/*",
+          "/account/*",
+          "/ar/account/*",
+          "/account",
+          "/ar/account",
+          "/sell-it-for-me",
+          "/ar/sell-it-for-me",
+          "/buyer-documents",
+          "/ar/buyer-documents",
+          "/buyer-documents/*",
+          "/ar/buyer-documents/*",
+          "/full-payment",
+          "/ar/full-payment"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "##IOS_MOBILE_APP_ID##"
+    ]
+  }
+}

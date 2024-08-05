@@ -1,0 +1,86 @@
+.rmdp-input {
+  @apply w-full px-3 py-2 border outline-none leading-tight resize-none rounded-none border-gray-200 text-gray-700;
+}
+.gogo-date-picker {
+  z-index: 0 !important;
+  .rmdp-wrapper {
+    @apply border border-primary border-solid shadow-primary;
+    box-shadow: 0 0 5px;
+  }
+
+  .rmdp-day .rmdp-selected-seller {
+    @apply bg-lighter-gray;
+  }
+
+  .rmdp-panel-body li {
+    @apply bg-primary shadow-primary;
+  }
+
+  .rmdp-week-day {
+    @apply text-primary;
+  }
+
+  .rmdp-day.rmdp-deactive {
+    @apply text-primary;
+  }
+
+  .rmdp-range {
+    @apply bg-primary shadow-primary;
+    box-shadow: 0 0 3px;
+    .rmdp-selected-seller {
+      @apply bg-primary;
+    }
+  }
+
+  .rmdp-arrow {
+    @apply border-primary border-solid;
+    border-width: 0 2px 2px 0;
+  }
+
+  .rmdp-arrow-container:hover {
+    @apply bg-primary shadow-primary;
+    box-shadow: 0 0 3px;
+  }
+
+  .rmdp-panel-body::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+  }
+
+  .rmdp-day.rmdp-today span {
+    @apply bg-success;
+  }
+
+  .rmdp-rtl .rmdp-panel {
+    @apply border-r border-solid border-r-primary;
+    border-left: unset;
+  }
+
+  .rmdp-day.rmdp-selected span:not(.highlight) {
+    @apply bg-primary shadow-primary;
+    box-shadow: 0 0 3px;
+  }
+
+  .rmdp-day:not(.rmdp-day-hidden) span:hover {
+    @apply bg-primary #{!important};
+  }
+
+  .b-deselect {
+    @apply text-light-gray bg-white;
+  }
+
+  .rmdp-action-button {
+    @apply text-primary;
+  }
+
+  .rmdp-button:not(.rmdp-action-button) {
+    @apply bg-primary;
+  }
+
+  .rmdp-button:not(.rmdp-action-button):hover {
+    @apply bg-light-gray text-red-500;
+  }
+
+  .rmdp-disabled span:hover {
+    @apply text-light-gray bg-white hover:bg-light-gray hover:text-dark-gray2 #{!important};
+  }
+}

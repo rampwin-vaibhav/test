@@ -1,0 +1,41 @@
+.modal {
+  background-color: rgb(82 81 81 / 50%);
+  display: flex;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 9999;
+
+  &.enter-done {
+    opacity: 1;
+    pointer-events: visible;
+
+    &.modal-content {
+      transform: translateY(0);
+    }
+  }
+
+  &.exit {
+    opacity: 0;
+
+    &.modal-content {
+      transform: translateY(-200px);
+    }
+  }
+}
+
+.app-rtl ~ .modal-rtl {
+  .arabic {
+    flex-direction: row-reverse;
+  }
+  .modal-input {
+    direction: rtl;
+  }
+
+  .arabic-text-right {
+    text-align: right;
+  }
+  .modal-header-rtl-btn {
+    @apply ml-0;
+  }
+}

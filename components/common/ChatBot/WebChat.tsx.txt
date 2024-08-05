@@ -1,0 +1,66 @@
+import { NextPage } from 'next';
+import { useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import ReactWebChat, {
+  createDirectLine,
+  createStyleSet,
+} from 'botframework-webchat';
+import { LabelConstants } from '../../../types/i18n.labels';
+
+const markdown = require('markdown-it')({ html: true, linkify: true });
+
+type ChatBotProps = {
+  onFetchToken: () => {};
+  token: string;
+  className: string;
+  store: any;
+};
+
+const WebChat: NextPage<ChatBotProps> = ({
+  onFetchToken,
+  token,
+  className,
+  store,
+}) => {
+  const directLine = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return createDirectLine({ token });
+    }
+  }, [token]);
+
+  const { t } = useTranslation();
+
+  const styleSet = useMemo(
+    () =>
+      createStyleSet({
+        backgroundColor: 'Transparent',
+      }),
+    []
+  );
+
+  useEffect(() => {
+    onFetchToken();
+  }, [onFetchToken]);
+
+  return token && typeof window !== 'undefined' ? (
+    <ReactWebChat
+      className={`${className || ''} web-chat`}
+      renderMarkdown={markdown.render.bind(markdown)}
+      directLine={directLine}
+      store={store}
+      styleSet={styleSet}
+      styleOptions={{ hideUploadButton: true }}
+    />
+  ) : (
+    <div className={`${className || ''} connect-spinner`}>
+      <div className="content">
+        <div className="icon">
+          <span className="ms-Icon ms-Icon--Robot" />
+        </div>
+        <p>{t(LabelConstants.PLEASE_WAIT)}</p>
+      </div>
+    </div>
+  );
+};
+
+export default WebChat;

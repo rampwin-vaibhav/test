@@ -1,0 +1,36 @@
+.gogo-faq-page {
+  .para-section {
+    @apply pt-3 pb-[5px];
+  }
+
+  .para-heading {
+    @apply text-lg font-semibold mb-2;
+    color: #465166;
+  }
+
+  .para-sub-heading {
+    @apply text-base font-semibold mb-2;
+    color: #465166;
+  }
+
+  .para-info {
+    @apply mb-3;
+    color: #7d8593;
+    line-height: 2;
+    word-spacing: 1px;
+  }
+  .policy-section {
+    @apply pt-3 pb-[5px];
+  }
+
+  ol,
+  ul {
+    margin: revert;
+    padding: revert;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+  p {
+    @apply ml-[15px] mt-[10px];
+  }
+}

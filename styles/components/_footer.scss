@@ -1,0 +1,16 @@
+.gogo-footer {
+  @apply aspect-[96/25] bg-primary;
+
+  .footer-text,
+  .social-icon {
+    @apply text-white;
+  }
+
+  .separator {
+    @apply border-0 border-b w-full border-white;
+  }
+
+  .social-icon {
+    @apply h-8 w-8 2xl:h-[40px] 2xl:w-[40px] 3xl:h-[48px] 3xl:w-[48px];
+  }
+}

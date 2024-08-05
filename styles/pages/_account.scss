@@ -1,0 +1,39 @@
+.account-container {
+  @apply w-full h-screen;
+}
+.wrapper {
+  @apply bg-white w-[500px];
+  padding: 0 20px;
+}
+.wrapper .form-container {
+  @apply bg-white border border-light-gray w-full rounded;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+.wrapper .form-container form {
+  padding: 30px 25px 25px 25px;
+}
+
+.wrapper .form-container form .password-input,
+.email-input {
+  @apply border border-light-gray w-full outline-none rounded text-base;
+  transition: all 0.3s ease;
+  padding: 2px 12px;
+  margin-bottom: 10px;
+}
+
+.wrapper button {
+  @apply text-lg font-medium cursor-pointer w-full rounded;
+  padding: 8px 0px;
+  margin: 15px 0 8px 0;
+}
+.wrapper .form-container form button {
+  @apply text-white bg-primary border-primary border;
+}
+.wrapper .info {
+  @apply text-primary cursor-pointer;
+}
+.policy-text {
+  @apply text-base;
+  padding: 0 25px 25px;
+}

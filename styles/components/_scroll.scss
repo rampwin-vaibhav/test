@@ -1,0 +1,26 @@
+.mobile-scroll {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-scrollbar:vertical {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-[4px];
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .placeholder {
+    @apply text-dark-gray2;
+  }
+}

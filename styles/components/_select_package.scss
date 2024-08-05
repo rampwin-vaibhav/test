@@ -1,0 +1,59 @@
+.gogo-packages {
+  .package-shadow {
+    box-shadow: inset 0 10px 5px -10px #111;
+  }
+  table {
+    tbody tr {
+      td {
+        @apply px-2;
+        &:first-child {
+          @apply ltr:pl-0 rtl:pr-0;
+        }
+      }
+      td:not(:first-child) {
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+  .triangle {
+    @apply flex h-0 w-0 border-[0.75rem] border-transparent border-t-selection;
+  }
+  .sticky-col {
+    @apply sticky ltr:left-0 rtl:right-0;
+
+    background-color: white;
+    z-index: 10;
+  }
+
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scroll {
+    scrollbar-width: none;
+  }
+
+  .package-table {
+    scroll-behavior: smooth;
+    @apply overflow-x-scroll overflow-y-visible p-0;
+
+    table {
+      td {
+        @apply p-0;
+      }
+
+      .headcol {
+        @apply sticky left-0 top-auto bg-white z-10;
+        border-top-width: 1px;
+      }
+    }
+  }
+  .hide-button {
+    @apply block lg:hidden;
+  }
+
+  .show-buttons:hover .hide-button {
+    display: block;
+  }
+}

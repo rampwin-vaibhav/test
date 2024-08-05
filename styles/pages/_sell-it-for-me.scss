@@ -1,0 +1,54 @@
+.sell-it-for-me-page {
+  .seller-process {
+    @apply rounded-full sm:text-3xl text-lg font-bold mt-4 mb-4 sm:px-16 px-4 py-2 flex items-center justify-center;
+  }
+  .launch-text {
+    transform: rotate(-27deg);
+    line-height: 9px;
+  }
+
+  .arabic {
+    transform: scale(-1, 1);
+    direction: ltr;
+  }
+  .arabic-text {
+    margin-left: -0.2rem;
+    top: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .arabic-text {
+      margin-left: -2rem !important;
+      top: 1.8rem !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .launch-font {
+      font-size: 7px;
+    }
+  }
+}
+
+.scrollbar-v1 *::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-v1 *::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+.scrollbar-v1 *::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 50px;
+}
+@media screen and (max-width: 640px) {
+  .scrollbar-v1 *::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.scrollbar-none *::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}

@@ -1,0 +1,58 @@
+.go-onboard-vehicle-page {
+  // Vehicle-Details Tab css
+  .vehicle-details-tab {
+    .vin-number-button {
+      border: 1px solid rgb(185, 185, 190);
+      border-radius: 10px;
+      @apply py-3 px-8 hover:bg-red-600 hover:text-white;
+    }
+
+    .vin-number-button-selected {
+      border-radius: 10px;
+      @apply py-3 px-8 text-white;
+    }
+  }
+
+  // Additional form Tab css
+  .additional-form-tab {
+    .km-input-box-text {
+      background-color: hsl(200deg 8% 74%);
+      border-color: hsl(0, 0%, 80%);
+      border-style: solid;
+      border-width: 1px;
+      color: #fff;
+      font-size: 15px;
+      padding: 4px 0px;
+      margin-top: 20px;
+      @apply w-1/6 rounded-r text-center;
+    }
+
+    .unselected-vehicle-color {
+      border-width: 1px;
+      border-color: transparent;
+      @apply rounded-md mr-2;
+    }
+  }
+
+  // Image form Tab css
+  .image-form-tab {
+    .image-upload-box {
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+      aspect-ratio: 16/9;
+
+      img {
+        height: 90%;
+        aspect-ratio: 16/9;
+      }
+    }
+
+    .image-upload-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

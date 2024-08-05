@@ -1,0 +1,182 @@
+/**
+ * typography
+ */
+$text-map: (
+  lg: (
+    null: 17,
+    640px: 19,
+    768px: 20,
+    1024px: 20,
+    1280px: 20,
+    1536px: 20,
+    1920px: 22,
+  ),
+  md: (
+    null: 16,
+    640px: 18,
+    768px: 18,
+    1024px: 18,
+    1280px: 18,
+    1536px: 18,
+    1920px: 20,
+  ),
+  base: (
+    null: 15,
+    640px: 16,
+    768px: 16,
+    1024px: 16,
+    1280px: 16,
+    1536px: 16,
+    1920px: 18,
+  ),
+  sm: (
+    null: 14,
+    640px: 14,
+    768px: 14,
+    1024px: 14,
+    1280px: 14,
+    1536px: 14,
+    1920px: 16,
+  ),
+  xs: (
+    null: 12,
+    640px: 14,
+    768px: 14,
+    1024px: 14,
+    1280px: 14,
+    1536px: 11,
+    1920px: 14,
+  ),
+);
+
+@each $name, $size in $text-map {
+  .text-body-#{$name} {
+    @include font-size($size);
+  }
+}
+
+/**
+ * heading typography
+ */
+$heading-map: (
+  6: (
+    null: 18,
+    640px: 20,
+    768px: 21,
+    1024px: 21,
+    1280px: 22,
+    1536px: 22,
+    1920px: 24,
+  ),
+  5: (
+    null: 19,
+    640px: 24,
+    768px: 22,
+    1024px: 22,
+    1280px: 24,
+    1536px: 24,
+    1920px: 26,
+  ),
+  4: (
+    null: 20,
+    640px: 23,
+    768px: 23,
+    1024px: 24,
+    1280px: 28,
+    1536px: 28,
+    1920px: 30,
+  ),
+  3: (
+    null: 22,
+    640px: 22,
+    768px: 24,
+    1024px: 28,
+    1280px: 34,
+    1536px: 36,
+    1920px: 40,
+  ),
+  2: (
+    null: 24,
+    640px: 21,
+    768px: 26,
+    1024px: 30,
+    1280px: 42,
+    1536px: 42,
+    1920px: 48,
+  ),
+  1: (
+    null: 26,
+    640px: 20,
+    768px: 30,
+    1024px: 34,
+    1280px: 40,
+    1536px: 48,
+    1920px: 54,
+  ),
+  lg: (
+    null: 35,
+    640px: 40,
+    768px: 45,
+    1024px: 40,
+    1280px: 50,
+    1536px: 55,
+    1920px: 60,
+  ),
+  xl: (
+    null: 35,
+    640px: 40,
+    768px: 45,
+    1024px: 40,
+    1280px: 50,
+    1536px: 60,
+    1920px: 80,
+  ),
+);
+
+@each $name, $size in $heading-map {
+  .text-heading-#{$name} {
+    @include font-size($size);
+  }
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-[#ff8300] to-[#de2a00] text-white;
+}
+.bg-gradient-diamond {
+  @apply bg-gradient-to-r from-[#FE8B61] to-[#ED6969] text-white;
+}
+.bg-gradient-platinum {
+  @apply bg-gradient-to-r from-[#C17DD4] to-[#8C82E0] text-white;
+}
+.bg-gradient-gold {
+  @apply bg-gradient-to-r from-[#25C9CC] to-[#3EA2E6] text-white;
+}
+.bg-gradient-silver {
+  @apply bg-gradient-to-r from-[#2CDC9C] to-[#1DC9CB] text-white;
+}
+.bg-gradient-recommended {
+  @apply bg-gradient-to-r from-[#FE8200] to-[#E23400] text-white;
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #fe8200, #e23400);
+}
+
+.text-gradient {
+  @apply text-transparent bg-gradient-to-r bg-clip-text from-[#ff8300] to-[#de2a00];
+  &.underline {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 80%;
+      width: 100%;
+      left: 0;
+      height: 1px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #ff8300 0%, #de2a00 100%);
+    }
+  }
+}

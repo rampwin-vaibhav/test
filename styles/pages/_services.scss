@@ -1,0 +1,167 @@
+.gogo-services-page {
+  .auto-paint-tab {
+    .autopaint {
+      background: #f2f4f5;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #7b7b7b;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      height: 100%;
+    }
+
+    #service_table td {
+      border: 1px solid gray;
+      border-collapse: collapse;
+      padding: 6px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    tr {
+      border: none;
+    }
+
+    table,
+    tr,
+    th {
+      border: none;
+    }
+
+    .heading-border {
+      width: 100px;
+      border-top: 6px solid;
+      border-color: rgb(216, 74, 74);
+    }
+
+    .text-color {
+      color: #4b124b;
+    }
+
+    .po-terms {
+      ol,
+      ul {
+        margin: revert;
+        padding: revert;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+      }
+      a {
+        color: rgb(84, 110, 239);
+        border-bottom: 1px solid rgb(84, 110, 239);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.autoCareAR {
+  width: 250px;
+}
+.autoCareEN {
+  width: 250px;
+}
+.bodyPaintAR {
+  width: 250px;
+}
+.bodyPaintEN {
+  width: 250px;
+}
+
+.bg-moss-green {
+  background: #86a85a;
+}
+.bg-dark-blue-gray {
+  background: #6663a2;
+}
+.bg-rose-quartz-pink {
+  background: #b755a0;
+}
+.bg-old-lace {
+  background: #f6f6e8;
+}
+.bg-bright-green {
+  background: #e8f6eb;
+}
+.bg-bright-gray {
+  background: #e8f3f6;
+}
+.bg-anti-flash-white {
+  background: #f5e8f6;
+}
+.bg-alabaster {
+  background: #f6e8e8;
+}
+
+.color-cyan-cornflower-blue {
+  color: #1f83be;
+}
+
+.tristar {
+  table {
+    width: -webkit-fill-available;
+    background: white;
+  }
+
+  td {
+    @apply border border-lighter-gray;
+  }
+  ol,
+  ul {
+    list-style-position: inside;
+  }
+
+  li {
+    @apply border-b border-b-lighter-gray;
+    @media (min-width: 1024px) {
+      padding: 15px;
+    }
+    @media (max-width: 1024px) {
+      padding: 10px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .tristar-img {
+      width: 300px;
+    }
+  }
+
+  .desc-div {
+    li {
+      padding: 5px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .tristar-img {
+      width: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tristar-img {
+      width: 150px;
+    }
+  }
+
+  .td-bg {
+    background: #ffe6e659;
+  }
+
+  .td-bg2 {
+    background: #e6fff769;
+  }
+
+  li:last-child {
+    border-bottom: none !important;
+  }
+
+  @media (max-width: 468px) {
+    .selling-part {
+      li {
+        padding: 0 !important;
+      }
+    }
+  }
+}

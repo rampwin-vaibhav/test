@@ -1,0 +1,171 @@
+pool:
+  name: Azure Pipelines
+  demands: npm
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '16.x'
+    displayName: 'Install Node.js'
+
+  - powershell: |
+      # Write your PowerShell commands here.
+      Write-Host "Read apple-app-site-association file"
+      $content = Get-Content -Path "$(System.DefaultWorkingDirectory)\public\.well-known\apple-app-site-association"
+      Write-Host "Replace apple-app-site-association file"
+      $content = $content -replace '##IOS_MOBILE_APP_ID##', ${env:IOS_MOBILE_APP_ID}
+      $content | Set-Content -Path "$(System.DefaultWorkingDirectory)\public\.well-known\apple-app-site-association"
+      Write-Host "Replacement done for apple-app-site-association file"
+    displayName: 'PowerShell Script - AASA'
+
+  - powershell: |
+      # Write your PowerShell commands here.
+      Write-Host "Read assetlinks.json file"
+      $content = Get-Content -Path "$(System.DefaultWorkingDirectory)\public\.well-known\assetlinks.json"
+      Write-Host "Replace assetlinks.json file"
+      $content = $content -replace '##ANDROID_PACKAGE_NAME##', ${env:ANDROID_PACKAGE_NAME}
+      $content = $content -replace '##ANDROID_SHA256_CERT_FINGERPRINTS##', ${env:ANDROID_SHA256_CERT_FINGERPRINTS}
+      $content | Set-Content -Path "$(System.DefaultWorkingDirectory)\public\.well-known\assetlinks.json"
+      Write-Host "Replacement done for assetlinks.json file"
+    displayName: 'PowerShell Script - assetlinks.json'
+
+  - powershell: |
+      # Write your PowerShell commands here.
+      Write-Host "Read .env.production file"
+      $content = Get-Content -Path "$(System.DefaultWorkingDirectory)\.env.production"
+      Write-Host "Replace .env.production file"
+      $content = $content -replace '##API_BASE_URL##', ${env:API_BASE_URL}
+      $content = $content -replace '##IMAGE_CDN_URL##', ${env:IMAGE_CDN_URL}
+      $content = $content -replace '##IS_LOCAL##', ${env:IS_LOCAL}
+      $content = $content -replace '##CAPTCHA_SITE_KEY##', ${env:CAPTCHA_SITE_KEY}
+      $content = $content -replace '##GTM_IDENTIFIER##', ${env:GTM_IDENTIFIER}
+      $content = $content -replace '##GTM_ENV_PREFIX##', ${env:GTM_ENV_PREFIX}
+      $content = $content -replace '##GTM_ASSET_ENV_PREFIX##', ${env:GTM_ASSET_ENV_PREFIX}
+      $content = $content -replace '##INSTRUMENTATION_KEY##', ${env:INSTRUMENTATION_KEY}
+      $content = $content -replace '##ENABLE_CRAWLING##', ${env:ENABLE_CRAWLING}
+      $content = $content -replace '##COUNTRY_CODES##', ${env:COUNTRY_CODES}
+      $content = $content -replace '##PAYMENT_CHECKOUT_PAGE##', ${env:PAYMENT_CHECKOUT_PAGE}
+      $content = $content -replace '##SHOW_EMI##', ${env:SHOW_EMI}
+      $content = $content -replace '##APP_CDN_URL##', ${env:APP_CDN_URL}
+      $content = $content -replace '##BUY_MOJAZ_REPORT_LINK##', ${env:BUY_MOJAZ_REPORT_LINK}
+      $content = $content -replace '##STORE_QR_CREATOR_URL##', ${env:STORE_QR_CREATOR_URL}
+      $content = $content -replace '##DOCUMENT_CONTAINER##', ${env:DOCUMENT_CONTAINER}
+      $content = $content -replace '##ENABLE_ADSENSE##', ${env:ENABLE_ADSENSE}
+      $content = $content -replace '##LOG_OUT_URL##', ${env:LOG_OUT_URL}
+      $content = $content -replace '##GOOGLE_PUBLISHER_ID##', ${env:GOOGLE_PUBLISHER_ID}
+      $content = $content -replace '##CLARITY_ID##', ${env:CLARITY_ID}
+      $content = $content -replace '##TRANSLATION_API_KEY##', ${env:TRANSLATION_API_KEY}
+      $content = $content -replace '##TRANSLATION_END_POINT##', ${env:TRANSLATION_END_POINT}
+      $content = $content -replace '##TRANSLATION_LOCATION##', ${env:TRANSLATION_LOCATION}
+      $content = $content -replace '##LEAD_WEBHOOK##', ${env:LEAD_WEBHOOK}
+      $content = $content -replace '##REVALIDATE_SECRET_TOKEN##', ${env:REVALIDATE_SECRET_TOKEN}
+      $content | Set-Content -Path "$(System.DefaultWorkingDirectory)\.env.production"
+      Write-Host "Replacement done for .env.production file"
+    displayName: 'PowerShell Script'
+
+  - powershell: |
+      # Write your PowerShell commands here.
+      Write-Host "Read Ads.txt file"
+      $content = Get-Content -Path "$(System.DefaultWorkingDirectory)\public\Ads.txt"
+      Write-Host "Replace Ads.txt file"
+      $content = $content -replace '##GOOGLE_PUBLISHER_ID##', ${env:GOOGLE_PUBLISHER_ID}
+      $content | Set-Content -Path "$(System.DefaultWorkingDirectory)\public\Ads.txt"
+      Write-Host "Replacement done for Ads.txt file"
+    displayName: 'PowerShell Script - Ads.txt'
+
+  - script: |
+      npm install -g yarn
+      yarn
+      yarn build
+    displayName: 'Install Yarn'
+
+  - task: CopyFiles@2
+    displayName: 'Copy env.production file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: '.env.production'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy package.json file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'package.json'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy yarn.lock file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'yarn.lock'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy public folder'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/public'
+      Contents: '**/*'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/public'
+
+  - task: CopyFiles@2
+    displayName: 'Copy .next folder'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/.next'
+      Contents: '**/*'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/.next'
+
+  - task: CopyFiles@2
+    displayName: 'Copy node_modules folder'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/node_modules'
+      Contents: '**/*'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/node_modules'
+
+  - task: CopyFiles@2
+    displayName: 'Copy web.config file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'web.config'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy server.js file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'server.js'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy apple-app-site-association file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'apple-app-site-association'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy next-i18next.config.js file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'next-i18next.config.js'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy next.config.js file'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)'
+      Contents: 'next.config.js'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      replaceExistingArchive: true
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      ArtifactName: 'drop'
+      publishLocation: 'Container'

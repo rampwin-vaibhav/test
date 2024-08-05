@@ -1,0 +1,39 @@
+.gogo-search-filter {
+  @apply flex flex-col gap-[1.4538rem];
+
+  .search-bar-container-wrapper {
+    @apply w-full flex border border-lighter-gray ltr:pl-5 rtl:pr-5 rounded-[0.1875rem] bg-lighter-gray h-[3.5269rem];
+
+    input {
+      @apply border-0 bg-transparent;
+    }
+
+    .filter-area-wrapper {
+      @apply hidden md:flex items-center h-full border-lighter-gray ltr:border-l rtl:border-r px-1 bg-white;
+    }
+  }
+
+  .body-type {
+    @apply flex flex-col items-center;
+  }
+
+  .filter-item {
+    @apply p-2 text-sm cursor-pointer bg-lighter-gray rounded;
+
+    &.selected {
+      @apply bg-primary text-white;
+    }
+  }
+
+  .badge-item {
+    @apply flex items-center h-full border rounded-full p-2 gap-3 hover:shadow-sm;
+
+    label {
+      @apply text-xs whitespace-nowrap;
+    }
+
+    .close-icon {
+      @apply h-[8px] w-[8px] cursor-pointer;
+    }
+  }
+}

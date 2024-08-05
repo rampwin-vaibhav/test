@@ -1,0 +1,32 @@
+.rc-slider {
+  .rc-slider-handle {
+    @apply shadow-2xl bg-white border-[0.1875rem] border-primary #{!important};
+    box-shadow: rgb(0 0 0 / 24%) 1px 1px 2px 0px;
+    height: 1.375rem !important;
+    width: 1.375rem !important;
+    margin-left: 0.625rem !important;
+    margin-top: -0.5625rem !important;
+    opacity: 1 !important;
+
+    &.rc-slider-handle-1 {
+      margin-left: 0.625rem !important;
+    }
+
+    &.rc-slider-handle-2 {
+      margin-left: -0.625rem !important;
+    }
+
+    &.rc-slider-handle-dragging {
+      box-shadow: none !important;
+    }
+  }
+
+  .rc-slider-rail {
+    @apply bg-light-gray h-1 #{!important};
+  }
+
+  .rc-slider-track {
+    @apply bg-primary;
+    height: 0.25rem !important;
+  }
+}

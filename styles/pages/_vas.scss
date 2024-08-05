@@ -1,0 +1,129 @@
+.line-clamp-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.landing-page-title {
+  @apply text-[2.5rem] tracking-wide;
+}
+
+.vas_embla {
+  width: 100%;
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 28%;
+  --slide-spacing-sm: 1.6rem;
+  --slide-size-sm: 80%;
+  --slide-spacing-lg: 2rem;
+  --slide-size-lg: calc(100% / 3);
+}
+.vas_embla__viewport {
+  overflow: hidden;
+}
+.vas_embla__container {
+  @apply flex gap-6;
+  backface-visibility: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+
+.vas_embla__slide {
+  min-width: 0;
+  flex: 0 0 var(--slide-size);
+  padding-left: var(--slide-spacing);
+}
+
+@media (max-width: 750px) {
+  .vas_embla__slide {
+    flex: 0 0 var(--slide-size-sm);
+    padding-left: var(--slide-spacing-sm);
+  }
+}
+
+.vas_embla__dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  @apply gap-4 mx-8;
+}
+
+.vas_embla__dot {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #dfdfdf;
+}
+
+.vas_embla__dot--selected {
+  width: 25px;
+  height: 10px;
+  border-radius: 10px;
+  @apply bg-primary;
+}
+
+.background-gradient-color {
+  background: linear-gradient(90deg, #ff8300 0%, #de2a00 100%) !important;
+}
+
+.package-background-gradient-color {
+  // background: linear-gradient(
+  //   to left,
+  //   #ffffff 100%,
+  //   #d7e0ff 50%,
+  //   #d64be2 0
+  // ) !important;
+  background: linear-gradient(
+    104.66deg,
+    #ffffff 13.45%,
+    rgba(215, 224, 255, 0.5) 44.67%,
+    rgba(214, 75, 226, 0) 95.57%
+  );
+
+  .select-button {
+    width: 8.5rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .tooltip .tooltiplight {
+    visibility: hidden;
+    color: #727272;
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+    overflow-wrap: break-word;
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 30%;
+    margin-left: -60px;
+    font-size: 12px;
+    border: 1px solid #f3f3f3;
+  }
+
+  .tooltip:hover .tooltiplight {
+    visibility: visible;
+  }
+
+  .tooltip .tooltiplight::before {
+    content: ' ';
+    position: absolute;
+    bottom: 100%;
+    top: -8px;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+  }
+}

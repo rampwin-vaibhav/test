@@ -1,0 +1,43 @@
+.gogo-tab {
+  .tab {
+    @apply w-full text-sm font-medium justify-start text-gray-500 border-gray-200;
+    .nav-tabs {
+      @apply hidden md:flex -mb-px w-full;
+      .nav-link {
+        @apply flex justify-center p-4 items-center text-center h-[5.9375rem] w-full border-b-4 border-transparent text-dark-gray1 hover:border-dark-gray2 border-light-gray;
+        font-weight: 600;
+        font-size: 16px;
+
+        &.disabled {
+          @apply text-gray-400 rounded-t-lg cursor-not-allowed;
+        }
+
+        &.active {
+          @apply rounded-t-lg border-b-4 text-selection border-selection;
+        }
+      }
+    }
+
+    .tab-content {
+      .card-header {
+        @apply flex md:hidden;
+      }
+
+      &.accordion {
+        .accordion-header {
+          @apply flex justify-between md:hidden p-4 bg-white border shadow;
+        }
+      }
+    }
+
+    .not-allowed {
+      @apply cursor-not-allowed;
+      * {
+        @apply cursor-not-allowed;
+      }
+    }
+  }
+  .triangle {
+    @apply flex h-0 w-0 border-[0.75rem] border-transparent border-t-selection;
+  }
+}
